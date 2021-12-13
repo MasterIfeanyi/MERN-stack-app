@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 //set static folder
 app.use(express.static(path.join(__dirname, "build")))
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(_dirname, "build", "index.html"))
 })
 
