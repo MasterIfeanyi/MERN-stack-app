@@ -32,11 +32,6 @@ app.get("/", (req, res) => {
 })
 
 
-// //set template engine
-// app.set("view engine", "ejs");
-
-// //set views file
-// app.set("views", path.join(__dirname, "views"));
 
 const MONGO_URI = "mongodb+srv://mongotut:testing123@cluster0.kogqa.mongodb.net/mern-stack-DB?retryWrites=true&w=majority"
 
@@ -51,8 +46,7 @@ mongoose.connect(MONGO_URI, {
 
 
 // use routes 
-
 app.use("/api/route", userRoutes)
 
 
-app.listen(port, () => console.log("sever is on 3000"));
+app.listen(port, () => console.log("sever is on 5000"));
