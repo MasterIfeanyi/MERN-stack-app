@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const {registerValidation} = require("./controllers/validation")
 const mongoose = require("mongoose");
-const { MONGO_URI } = require("./config");
+// const { MONGO_URI } = require("./config");
 // const dotenv = require('dotenv');
 // dotenv.config();
 
@@ -27,8 +27,8 @@ app.use(bodyParser.json());
 //set static folder
 app.use(express.static(path.join(__dirname, "build")))
 
-app.get("/*", (req, res) => {
-    res.sendFile(path.join(_dirname, "build", "index.html"))
+app.get("/", (req, res) => {
+    res.send(path.join(__dirname, "build", "index.html"))
 })
 
 
@@ -38,10 +38,11 @@ app.get("/*", (req, res) => {
 // //set views file
 // app.set("views", path.join(__dirname, "views"));
 
+const MONGO_URI = "mongodb+srv://mongotut:testing123@cluster0.kogqa.mongodb.net/mern-stack-DB?retryWrites=true&w=majority"
 
 
 //connect to mongodb
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("connected to MongoDB"))
