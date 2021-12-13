@@ -5,9 +5,9 @@ const cors = require("cors");
 const app = express();
 const {registerValidation} = require("./controllers/validation")
 const mongoose = require("mongoose");
-// const { MONGO_URI } = require("./config");
-const dotenv = require('dotenv');
-dotenv.config();
+const { MONGO_URI } = require("./config");
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 
 // Routes
